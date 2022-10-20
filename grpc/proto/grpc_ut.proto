@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "github.com/jiuzhou-zhao/go-templates/grpc/gens//utpb;utpb";
+option java_multiple_files = true;
+option java_package = "com.patdz.gotemplates.ut";
+option java_outer_classname = "UtProto";
+
+message HelloRequest {
+  string message = 1;
+  string caller = 2;
+}
+
+message HelloResponse {
+  string reply = 1;
+}
+
+service UTService {
+  rpc Hello(HelloRequest) returns (HelloResponse) {}
+}
+
